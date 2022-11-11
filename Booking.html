@@ -1,0 +1,119 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Book in Sunset Hotel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <style>
+            form table{font-size:30px ; text-align:center;background-color:darksalmon}
+            th{padding:5px;width:1%}
+            input.button{background-color:cadetblue; font-style:oblique;font-weight:bolder;font-family: 'Courier New', Courier, monospace;font-size:xx-large}
+            p.tell{font:italic bolder 30px 'Courier New','Courier' ; text-decoration:underline}
+            ol{font:normal bold 20px 'courier'}
+           
+        </style>
+        <link rel="stylesheet" href="Style11.css"> <!--external css file-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+       <!--header-->
+        <nav>
+            <button type="button" class="header" ><h2 ><label class="logo"> SunSetHotel </label></h2>
+            <img src="Logopit123.png" alt="Imgae of hotel" ></button>
+            <ul><!--header pags links-->
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="Log_in.html"> Sign Up </a></li>
+                <li><a href="AboutUs.html"> About Us </a></li>
+                <li><a href="ContactUs.html"> Contact Us </a></li>
+                <li><a href="Services.html"> Service </a></li>
+                <li><a href="HowBook.html"> Guide </a></li>
+    
+            </ul>
+        </nav>
+        <!--header end-->
+
+       <br/></br></br>
+
+       <!--name of client-->
+      <div style="text-align:center; font:italic bolder 35px Bodoni,Berlin,Arial">
+        Welcome (user's name)
+      </div> 
+      </br>
+      <div style="text-align:center; font:italic bolder 35px Berlin,Bodoni,Arial"> Choose your residence</div>
+    </br>
+
+      <!--avilable rooms from data base-->
+  <form>
+    <table border="border">
+        <tr>
+            <th>Select</th>
+            <th>Room #</th>
+            <th># Beds</th>
+            <th> Other services(clean car,clean room,breakfast)</th>
+        </tr>
+        <tr>
+            <td><input type="radio" name="room" value="" /></td>
+            <td>Sample room number 88</td>
+            <td>Sample #beds (2)</td>
+            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="room" value="" /></td>
+            <td>Sample room number 123</td>
+            <td>Sample #beds (2)</td>
+            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="room" value="" /></td>
+            <td>Sample room number 144</td>
+            <td>Sample #beds (2)</td>
+            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="room" value="" /></td>
+            <td>Sample room number 99</td>
+            <td>Sample #beds (3)</td>
+            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="room" value="" /></td>
+            <td>Sample room number 270</td>
+            <td>Sample #beds (1)</td>
+            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
+        </tr>
+        
+    </table>
+    <div style="text-align:center;padding:15px"><input class="button" type="reset" value="Clear"/>
+    <input class="button" type="submit" value="Boook"/></div>
+    
+
+  </form>
+  
+<!--show brevious booking-->
+<p class="tell">You already have these booking</p>
+<ol>
+    <li>Sample booking (Room 33, 2 beds , Other services "Yes")</li>
+    <li>Sample booking (Room 243, 1 beds , Other services "Yes")</li>
+    <li>Sample booking (Room 211, 2 beds , Other services "No")</li>
+</ol>
+
+
+
+
+<!--footer-->
+<footer>
+    <div class="footer-content">
+        <ul class="socials"><!--social links-->
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 SunSetHotel</p>
+    </div>
+</footer>
+<!--footer end-->
+    </body>
+</html>
