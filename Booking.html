@@ -13,7 +13,9 @@
            
         </style>
         <link rel="stylesheet" href="Style11.css"> <!--external css file-->
+        <script type="text/javascript" src="calulate .js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <lin
 
     </head>
     <body>
@@ -23,10 +25,13 @@
             <img src="Logopit123.png" alt="Imgae of hotel" ></button>
             <ul><!--header pags links-->
                 <li><a href="index.html"> Home </a></li>
-                <li><a href="Log_in.html"> Sign Up </a></li>
+                <li><a href="Log_in.html"> Sign In </a></li>
                 <li><a href="AboutUs.html"> About Us </a></li>
                 <li><a href="ContactUs.html"> Contact Us </a></li>
                 <li><a href="Services.html"> Service </a></li>
+                <li><a href="funpage.html"> Fun Time </a></li>
+                <li><a href="Questionnaire.html"> Questions </a></li>
+                <li><a href="Checking.html"> Checking table </a></li>
                 <li><a href="HowBook.html"> Guide </a></li>
     
             </ul>
@@ -44,59 +49,83 @@
     </br>
 
       <!--avilable rooms from data base-->
-  <form>
+  <form action="" id="calulate">
+   
     <table border="border">
         <tr>
             <th>Select</th>
-            <th>Room #</th>
+            
             <th># Beds</th>
             <th> Other services(clean car,clean room,breakfast)</th>
         </tr>
         <tr>
-            <td><input type="radio" name="room" value="" /></td>
-            <td>Sample room number 88</td>
-            <td>Sample #beds (2)</td>
-            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
+            <td><input type="radio" name="room" value="20OMR" id="1bed"/></td>
+          
+            <td> beds (1) (15ROM)</td>
+            <td colspan="2" rowspan="5" >
+            Clean car(2.0ROM)<input type="checkbox" name="services" value="2"  id="cleancar"/><br>
+            Clean room(1.0ROM) <input type="checkbox" name="services" value="2 " id="cleanroom"/><br> 
+            Breakfast(3ROM) <input type="checkbox" name="services" value="2" id="Breakfast" /></td>
+
         </tr>
         <tr>
-            <td><input type="radio" name="room" value="" /></td>
-            <td>Sample room number 123</td>
-            <td>Sample #beds (2)</td>
-            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
+            <td><input type="radio" name="room" value="20" id="2beds1"/></td>
+            
+            <td>beds (2)(20ROM)</td>
         </tr>
         <tr>
-            <td><input type="radio" name="room" value="" /></td>
-            <td>Sample room number 144</td>
-            <td>Sample #beds (2)</td>
-            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="room" value="" /></td>
-            <td>Sample room number 99</td>
-            <td>Sample #beds (3)</td>
-            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="room" value="" /></td>
-            <td>Sample room number 270</td>
-            <td>Sample #beds (1)</td>
-            <td><input type="checkbox" name="services" value="clean car"/>Clean car <input type="checkbox" name="services" value="clean room"/>Clean room <input type="checkbox" name="services" value="breakfast"/>Breakfast</td>
-        </tr>
+            <td><input type="radio" name="room" value="20OMR" id="3beds" /></td>
         
+            <td>beds (3)(25ROM)</td>
+        </tr>
+      
+
+
     </table>
-    <div style="text-align:center;padding:15px"><input class="button" type="reset" value="Clear"/>
+    
+
+    
+    
+
+
+
+
+    <div style="text-align:center;padding:15px">
+    <p id="coupon" style="text-align:center; font:italic bolder 35px Bodoni,Berlin,Arial"> Do you have Coupon: <br>
+       <label>
+     <input type="radio" name="copone" value="yes"  id="haveCopon1"/>Yes </label> 
+     <input type="radio" name="copone" value="No"  id="haveCopon2"/>No </label> <br>
+     <input type="text" placeholder="Enter the coupon"  /><br> <br>
+     
+
+    <input  style="text-align:center; font:italic bolder 35px Bodoni,Berlin,Arial"type="button" value="Display Price" onclick="getPrice1()"/>
+    <p id="price" style="text-align:center; font:italic bolder 35px Bodoni,Berlin,Arial">0.0 ROM</p>
+    <input class="button" type="reset" value="Clear" onclick="clear1()" />
     <input class="button" type="submit" value="Boook"/></div>
     
 
   </form>
+
+
+  <!--this script checking whatever the checkbox checked or not-->
+<script type="text/javascript">
+    var checkboxes = document.querySelectorAll(".checkbox");
+    
+    for (var checkbox of checkboxes) {
+      checkbox.addEventListener("click", function () {
+        if (this.checked == true) {
+            console.log(this.value)
+                
+        } else {
+         console.log("you checked the checkbox")
+        }
+      })
+    }
+    
+    
+    
+    </script>
   
-<!--show brevious booking-->
-<p class="tell">You already have these booking</p>
-<ol>
-    <li>Sample booking (Room 33, 2 beds , Other services "Yes")</li>
-    <li>Sample booking (Room 243, 1 beds , Other services "Yes")</li>
-    <li>Sample booking (Room 211, 2 beds , Other services "No")</li>
-</ol>
 
 
 
@@ -115,5 +144,9 @@
     </div>
 </footer>
 <!--footer end-->
+
+
+
+<script type="text/javascript" src= "calulate .js"></script>
     </body>
 </html>

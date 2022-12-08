@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> Questionnaire </title>
+<link rel="stylesheet" href="style11.css">
+
+</head>
+
+
+<body>
+    <nav>
+        <button type="button" class="header"><h2><label class="logo"> SunSetHotel
+            </label></h2>
+          <img src="Logopit123.png" alt="Imgae of hotel"></button>
+        <ul>
+          <li><a href="index.html"> Home </a></li>
+          <li><a href="Log_in.html"> Sign In </a></li>
+          <li><a href="AboutUs.html"> About Us </a></li>
+          <li><a href="ContactUs.html"> Contact Us </a></li>
+          <li><a href="Services.html"> Service </a></li>
+          <li><a href="funpage.html"> Fun Time </a></li>
+          <li><a href="Questionnaire.html"> Questions </a></li>
+          <li><a href="Checking.html"> Checking table </a></li>
+          <li><a href="HowBook.html"> Guide </a></li>
+        </ul>
+      </nav>
+      <!--header end-->
+      <br/></br>
+      <br/>
+      <br/>
+
+<center>
+  <h1>How is your experience?!</h1>
+  <form id = "quiz" name = "quiz">
+
+
+    <p class = "questions">How is your experience? Great or Bad</p>
+    
+    <input id = "textbox" type = "text" name = "question1">
+    
+    <p class = "questions">What is your rate for the services?</p>
+    <input type = "radio" id = "mc" name = "question2" value = "5-10">5-10<br>
+    <input type = "radio" id = "mc" name = "question2" value = "0-5">0-5<br>
+    
+    
+    <p class = "questions">What is the best service?</p>
+    
+    <input type = "radio" id = "mc" name = "question3" value = "Car wash">Car wash<br>
+    <input type = "radio" id = "mc" name = "question3" value = "Rooms-pools">Rooms-pools<br>
+
+    <p class = "questions">Choose your worst service?</p>
+    
+    <input type = "checkbox" id = "mc" name = "question4" value = "Pool">Pool<br>
+    <input type = "checkbox" id = "mc" name = "question4" value = "Resturant">Resturant<br>
+    
+    <input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
+    
+    
+    </form>
+    <div id = "after_submit">
+      <p id = "number_correct"></p>
+      <p id = "message"></p>
+      </div>
+       <!--footer-->
+       <footer>
+          <div class="footer-content">
+            <ul class="socials"><!--social links-->
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <div class="footer-bottom">
+            <p>copyright &copy;2022 SunSetHotel</p>
+          </div>
+        </footer>
+        <!--footer end-->
+
+          <!--Script to know the pepole experience-->
+      <script type="text/javascript">
+          function check(){
+      
+      var question1 = document.quiz.question1.value;
+      var question2 = document.quiz.question2.value;
+      var question3 = document.quiz.question3.value;
+      var question4 = document.quiz.question4.value;
+      var correct = 0;
+      // the correct or the best services we have 
+      if (question1 == "Great") {
+          correct++;
+      }
+      if (question2 == "5-10") {
+          correct++;
+      }	
+      if (question3 == "car wash") {
+          correct++;
+      }
+
+      if (question4 == "Pool") {
+          correct++;
+      }
+
+      var messages = ["Great", "We hope you can enjoy next time", "We will consider your feedback as number one of our priorty to improve"];
+      var score;
+      // check the rate
+      if (correct == 0) {
+          score = 2;
+      }
+      
+      if (correct > 0 && correct < 3) {
+          score = 1;
+      }
+      
+      if (correct == 3) {
+          score = 0;
+      }
+      
+      document.getElementById("after_submit").style.visibility = "visible";
+      
+      document.getElementById("message").innerHTML = messages[score];
+      }
+      </script>
+    
+</center>
+
+</html>
+
+</body>

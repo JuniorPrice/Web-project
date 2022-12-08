@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Table</title>
+    <link rel="stylesheet" type="text/css" href="style11.css">
+</head>
+
+<body>
+      <!--header-->
+      <nav>
+        <button type="button" class="header" ><h2 ><label class="logo"> SunSetHotel </label></h2>
+        <img src="Logopit123.png" alt="Imgae of hotel" ></button>
+        <ul><!--header pags links-->
+            <li><a href="index.html"> Home </a></li>
+            <li><a href="Log_in.html"> Sign In </a></li>
+            <li><a href="AboutUs.html"> About Us </a></li>
+            <li><a href="ContactUs.html"> Contact Us </a></li>
+            <li><a href="Services.html"> Service </a></li>
+            <li><a href="funpage.html"> Fun Time </a></li>
+            <li><a href="Questionnaire.html"> Questions </a></li>
+            <li><a href="Checking.html"> Checking table </a></li>
+            <li><a href="HowBook.html"> Guide </a></li>
+
+        </ul>
+    </nav>
+    <!--header end-->
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+   <center>
+    <h1 id="title" class="events">To check the vip empty rooms</h1>
+    <div id="wrapper">
+
+    </div>
+
+    <script>
+        var cols = ['name', 'Floor', 'Room']
+
+        var data = [{
+            id: 0,
+            name: "Room1",
+            Floor: "Floor1",
+            Number:001,
+            isEmpty: true
+        }, {
+            id: 1,
+            name: "Room2",
+            Floor: "Floor2",
+            Number:002,
+            isEmpty: false
+        },{
+            id: 3,
+            name: "Room3",
+            Floor: "Floor3",
+            Number:003,
+            isEmpty: false
+        }, {
+            id: 4,
+            name: "Room4",
+            Floor: "Floor4",
+            Number:004,
+            isEmpty: false
+        }]
+
+        // Create Table and Header
+
+        var t = document.createElement('table');
+        t.classList.add('scooby-gang', 'listing');
+
+        t.appendChild(document.createElement('thead'));
+        t.querySelector('thead').appendChild(document.createElement('tr'));
+
+        for (var i = 0; i < cols.length; i++) {
+            var heading = document.createElement('td');
+            heading.textContent = cols[i];
+            t.querySelector('thead tr').appendChild(heading);
+        }
+
+        document.getElementById('wrapper').appendChild(t);
+
+        // Create rows
+        for (var i = 0; i < data.length; i++) {
+            var s = data[i];
+            var r = document.createElement('tr');
+
+            r.dataset.personId = s.id;
+            r.id = s.name.toLowerCase() + "-row";
+
+            var nameCell = document.createElement('td');
+            nameCell.textContent = s.name;
+            nameCell.classList.add('name');
+            nameCell.dataset.personId = s.id;
+
+            var FloorCell = document.createElement('td');
+            FloorCell.textContent = s.Floor;
+            FloorCell.classList.add('Floor');
+            FloorCell.dataset.personId = s.id;
+
+            var NumberCell = document.createElement('td');
+            NumberCell.textContent = s.Number;
+            NumberCell.classList.add('Number');
+            NumberCell.dataset.personId = s.id;
+
+            r.appendChild(nameCell);
+            r.appendChild(FloorCell);
+            r.appendChild(NumberCell);
+
+            t.appendChild(r);
+        }
+
+        function getScoobyNameById(pid) {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].id === Number(pid)) {
+                    return data[i].name;
+                }
+            }
+
+            return null;
+        }
+
+        function isScoobyDemon(pid) {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].id === Number(pid)) {
+                    if (data[i].isDemon) {
+                        return data[i].name + " is a Empty."
+                    } else {
+                        return data[i].name + " is not a Empty."
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        function logInfo(actionNum, pid) {
+            console.log(
+                "Action " + actionNum + " Player: " + getScoobyNameById(pid) +
+                " and " + isScoobyDemon(pid)
+            );
+        }
+
+        function action1(e) {
+            alert(
+                "Action One Current Target: " + e.currentTarget.tagName +
+                "\nTarget: " + e.target.tagName
+            );
+            if (e.currentTarget.tagName === 'TR') {
+                console.log("THIS ONE IS A TR");
+            }
+            logInfo(1, e.target.dataset.personId);
+        }
+
+        function action2(e) {
+            alert(
+                "Action Two Current Target: " + e.currentTarget.tagName +
+                "\nTarget: " + e.target.tagName
+            );
+            logInfo(2, e.target.dataset.personId);
+        }
+
+        function action3(e) {
+            alert(
+                "Action Three Current Target: " + e.currentTarget.tagName +
+                "\nTarget: " + e.target.tagName
+            );
+            logInfo(3, e.target.dataset.personId);
+
+        }
+
+        function action4(e) {
+            alert(
+                "Action Four Current Target: " + e.currentTarget.tagName +
+                "\nTarget: " + e.target.tagName
+            );
+            logInfo(4, e.target.dataset.personId);
+        }
+
+
+        var cells = document.querySelectorAll("td.name");
+
+        // Assign action 1 handler to name cells
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('click', action1);
+        }
+
+        // Assign action 2 handler to third row by element id
+        document.querySelector("#" + data[2].name.toLowerCase() + "-row").addEventListener('click', action2);
+
+        // Assign action 3 handler to table
+        document.querySelector("#wrapper table").addEventListener('click', action3);
+
+
+        // Assign action 4 handler to div that wraps table
+        document.querySelector("#wrapper").addEventListener('click', action4);
+    </script>
+
+</body>
+
+   </center>
+
+     <!--footer-->
+     <footer>
+        <div class="footer-content">
+          <ul class="socials"><!--social links-->
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2022 SunSetHotel</p>
+        </div>
+      </footer>
+      <!--footer end-->
+    
+</html>
