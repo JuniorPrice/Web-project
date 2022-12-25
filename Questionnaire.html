@@ -35,7 +35,7 @@
 
 <center>
   <h1>How is your experience?!</h1>
-  <form id = "quiz" name = "quiz">
+  <form id = "quiz" name = "quiz" action="questionnaire.php" method="post">
 
 
     <p class = "questions">How is your experience? Great or Bad</p>
@@ -57,7 +57,7 @@
     <input type = "checkbox" id = "mc" name = "question4" value = "Pool">Pool<br>
     <input type = "checkbox" id = "mc" name = "question4" value = "Resturant">Resturant<br>
     
-    <input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
+    <button name="submit"> Send </button>
     
     
     </form>

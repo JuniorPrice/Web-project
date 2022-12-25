@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style11.css"> <!--external css file-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         button{
             color:rgb(126, 96, 57) ;
@@ -18,8 +19,9 @@
 <body>
     <!--header-->
     <nav>
-        <button type="button" class="header" ><h2 ><label class="logo"> SunSetHotel </label></h2>
-            <img src="Logopit123.png" alt="Imgae of hotel" ></button>
+        <button type="button" class="header"><h2><label class="logo">
+                    SunSetHotel </label></h2>
+            <img src="Logopit123.png" alt="Imgae of hotel"></button>
         <ul><!--header pags links-->
             <li><a href="index.html"> Home </a></li>
             <li><a href="Log_in.html"> Sign Up </a></li>
@@ -35,48 +37,56 @@
     </nav>
     <!--header end-->
     
-    <form action="Booking.html">
-    <center>
-    </br></br></br>  </br> </br> </br> </br>
-  
-        <h1> Sign up </h1>
-<!--take client information-->
-        <form action="" method="">
-            <h1>
-                <table>
-                    <tr>
-                        <td> Email</td>
-                        <td>
-                            <input type="text" name="user">
-                        </td>  
-                    </tr>
-                    <tr>
-                        <td> password</td>
-                        <td>
-                            <input type="text" name="user">
-                        </td>
+
+    <form action="Booking.php" method="POST">
+        <center>
+            <br /><br /><br /><br />
+
+            <h1> Sign up </h1>
+            <p stayle="text-decoration:underline;">--- Fill all fields ---</p>
+            <!--take client information-->
+            
+                <h1>
+                    <table>
                         <tr>
-                            <td>Username</td>
+                            <td> Name</td>
                             <td>
-                                <input type="text" name="user">
+                                <input id="name" type="text" name="name"
+                                    placeholder="Name" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> E-mail</td>
+                            <td>
+                                <input type="text" name="email"
+                                    placeholder="E-mail">
+                            </td>
+                        <tr>
+                            <td>User name</td>
+                            <td>
+                                <input type="text" name="uname"
+                                        placeholder="User name">
                             </td>
                         </tr>
                         <tr>
                             <td>Password</td>
                             <td>
-                                <input type="text" name="user">
+                                <input type="text" name="password"
+                                        placeholder="Password">
                             </td>
                         </tr>
-                    </tr>
-                </table>
-            </form>
+                        </tr>
+                    </table>
+                </form>
             </h1>
-            <button name="Submit">Sign up</button>
-     </form>
+            <button name="Submit" name="submit" >Sign up</button>
+        </form>
     </center>
-   <center> 
-    Already have account?  <a href="login1.html"> Login </a></center>
+    <center>
+        Already have account? <a href="login.html"> Login </a></center>
 
+
+       
     <!--footer-->
     <footer>
         <div class="footer-content">
@@ -91,6 +101,5 @@
         </div>
     </footer>
     <!--footer end-->
-   
-</body>
 
+</body>
